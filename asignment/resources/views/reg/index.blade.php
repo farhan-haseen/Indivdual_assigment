@@ -32,12 +32,22 @@
 			</tr>
 			<tr>
 				<td>Type</td>
-				<td><input type="text"  name="type" value="{{old('type')}}"></td>
+				<td>
+					<select name="type">
+						<option>customer</option>
+						<option>admin</option>
+					</select>
+				</td>
+				<!-- <td><input type="text"  name="type" value="{{old('type')}}"></td> -->
 			</tr>
 			
 			<tr>
 				<td></td>
 				<td><input type="submit"  name="submit" value="Confirm"></td>
+				<td>
+					<a href="/login">Back</a>
+
+				</td>
 			</tr>
 		</table>
 

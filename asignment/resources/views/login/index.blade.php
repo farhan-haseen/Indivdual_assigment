@@ -14,6 +14,9 @@
 		Password: <input type="password" name="password" ><br><br>
 		<input type="submit" name="submit" value="Sign In" >
 	</form>
+	<br>
+	For registering a new account, go to <a href="/reg">here</a>
+	<br>
 	<h3>{{session('msg')}}</h3>
 </body>
 </html>

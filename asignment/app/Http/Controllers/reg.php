@@ -21,7 +21,24 @@ class reg extends Controller
             'type'=>'required'
         ]);
 
-        echo "sAAAAAfsd";
+        // echo "sAAAAAfsd";
+
+        $user = new user();
+
+        $user->username = $req->username;
+        $user->password = $req->password;
+        $user->fullname     = $req->name;
+        $user->phone     = $req->Phone;
+        $user->address     = $req->Address;
+        $user->type     = $req->type;
         
+        $user->save();
+        return view('login.index');
+        
+        // if($user->save()){
+        //     return redirect()->route('home.list');
+        // }else{
+        //     return redirect()->route('home.add');
+        // }
     }
 }
