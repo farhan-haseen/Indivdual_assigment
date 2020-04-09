@@ -25,7 +25,10 @@ Route::get('/admin_profile', 'admin_home@profile');
 Route::get('/admin_cl', 'admin_home@custlist');
 Route::get('/admin_ul', 'admin_home@userlist');
 Route::get('/admin_nb', 'admin_home@newbook');
+Route::post('/newbook_2', 'admin_home@newbook_2');
 
 
 Route::get('/cust_home', 'cust_home@index');
+Route::post('/view', 'cust_home@view');
+Route::post('/addtocart', 'cust_home@addtocart');
 
