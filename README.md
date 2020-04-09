@@ -1,2 +1,1 @@
-# ATP3_Larav_assignment
-This is my Laravel based assignment
+# ATP3 Laravel assignment .........
