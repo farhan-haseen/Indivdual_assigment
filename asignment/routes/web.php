@@ -31,4 +31,5 @@ Route::post('/newbook_2', 'admin_home@newbook_2');
 Route::get('/cust_home', 'cust_home@index');
 Route::post('/view', 'cust_home@view');
 Route::post('/addtocart', 'cust_home@addtocart');
+Route::get('/pm_selected', 'cust_home@payment');
 
