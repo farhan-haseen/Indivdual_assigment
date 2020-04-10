@@ -6,7 +6,7 @@
 <body>
 	<h1>Profile</h1>
 	
-	<form action="/admin_profileUpdate" method="post">
+	<form action="/cust_profileUpdate" method="post">
 
 		{{csrf_field()}}
 		<table>
@@ -35,7 +35,7 @@
 				<td></td>
 				<td><button type="submit"  name="submit" value="{{$userInfo['id']}}">Update</button></td>
 				<td>
-					<a href="/admin_home">Back</a>
+					<a href="/cust_home">Back</a>
 
 				</td>
 			</tr>

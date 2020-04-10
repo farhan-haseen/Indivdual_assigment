@@ -15,6 +15,29 @@ class cust_home extends Controller
         $b_list = book::all();
         return view('cust_home.index',['b_list'=>$b_list]);
     }
+    public function profile(Request $req){
+
+        $user = $req->session()->get('username');
+        $list = user::where('username',$user)->get();
+        return view('cust_home.profile',['userInfo'=>$list[0]]);
+
+    }
+    public function cust_profileUpdate(Request $req){
+
+        $user = user::where('id',$req->submit)->get();
+        $user = $user[0];
+
+        $user->password = $req->password;
+        $user->fullname     = $req->name;
+        $user->phone     = $req->Phone;
+        $user->address     = $req->Address;
+        
+        $user->save();
+        return redirect('/cust_profile');
+
+    }
+
+
     public function view(Request $req){
 
         $b_list = book::where('id',$req->viewBtn)->get();
@@ -59,8 +82,26 @@ class cust_home extends Controller
 
         return redirect('/cust_home');
     }
-    
-    
-    
+    public function cart_payment(Request $req){
+        return view('cust_home.cart_payment');
+    }
+    public function cart_pm_selected(Request $req){
+
+        $req->session()->put('pmtype',$req->type);
+        $c_list = cart::all();
+        return view('cust_home.cartItems',['c_list'=>$c_list]);
+
+    }
+    public function cart_delete(Request $req){
+        
+        // echo $req->viewBtn;
+        cart::destroy($req->viewBtn);
+        
+        $c_list = cart::all();
+        return view('cust_home.cartItems',['c_list'=>$c_list]);
+    }
+    public function cart_order_all(Request $req){
+
+    }
 
 }

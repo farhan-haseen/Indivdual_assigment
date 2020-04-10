@@ -16,7 +16,7 @@
 	<br>
 	<a href="/logout">Logout</a> |
 	<a href="/cust_profile">Check Profile</a> |
-	<a href="/">Payment</a> 
+	<a href="/cart_payment">Payment</a> 
 
 
 	<br>

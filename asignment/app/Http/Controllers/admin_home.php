@@ -19,6 +19,20 @@ class admin_home extends Controller
         return view('admin_home.profile',['userInfo'=>$list[0]]);
 
     }
+    public function admin_profileUpdate(Request $req){
+
+        $user = user::where('id',$req->submit)->get();
+        $user = $user[0];
+
+        $user->password = $req->password;
+        $user->fullname     = $req->name;
+        $user->phone     = $req->Phone;
+        $user->address     = $req->Address;
+        
+        $user->save();
+        return redirect('/admin_profile');
+
+    }
     public function custlist(Request $req){
 
         $list = user::where('type','customer')->get();
