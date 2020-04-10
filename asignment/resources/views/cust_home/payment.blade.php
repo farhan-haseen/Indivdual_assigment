@@ -7,14 +7,22 @@
 	<h1>Choose a payment option</h1>
 	<br>
 	<br>
-	<select name="type">
-		<option>Credit</option>
-		<option>Bkash</option>
-		<option>Dbbl</option>
-	</select>
+	<form action="/pm_selected" method="post">
+		{{csrf_field()}}
+		<select name="type">
+			<option>Credit</option>
+			<option>Bkash</option>
+			<option>Dbbl</option>
+		</select>
+		<br>
+		<br>
+		<input type="submit" value="Confirm">
+	</form>
+	
+	
 	<br>
 	<br>
-	<a href="/pm_selected">Done</a> | <a href="/cust_home">Back</a>
+	<a href="/cust_home">Back</a>
 	
 	
 

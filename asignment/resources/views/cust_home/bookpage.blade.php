@@ -22,11 +22,13 @@
 		Category: {{ $book['category'] }} <br>
 		authorName: {{ $book['authorName'] }} <br>
 		authorInfo: {{ $book['authorInfo'] }} <br>
-		<form action="/view" method="post">
+		<form action="/orderNow" method="post">
 			{{csrf_field()}}
-			<button type="submit" name="viewBtn" value="{{ $book['id'] }}">
+			<button type="submit" name="orderBtn" value="{{ $book['id'] }}">
 				Order this
 			</button>
+			<input type="hidden" name="bn" value="{{ $book['bookName'] }}">
+			<input type="hidden" name="bp" value="{{ $book['price'] }}">
 		</form>
 		<form action="/addtocart" method="post">
 			{{csrf_field()}}

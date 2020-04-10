@@ -14,7 +14,11 @@
 <body>
 	<h1>Welcome Customer!</h1>
 	<br>
-	<a href="/logout">Logout</a> | <a href="/cust_profile">Check Profile</a>
+	<a href="/logout">Logout</a> |
+	<a href="/cust_profile">Check Profile</a> |
+	<a href="/">Payment</a> 
+
+
 	<br>
 	<br>
 
