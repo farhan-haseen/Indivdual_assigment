@@ -36,12 +36,22 @@ class admin_home extends Controller
     public function custlist(Request $req){
 
         $list = user::where('type','customer')->get();
-        echo $list[0];
+
+        return view('admin_home.custlist',['u_list'=>$list]);
     }
+    public function admin_cl_delete($id,Request $req){
+
+        user::destroy($id);
+        return redirect('/admin_cl');
+
+        
+    }
+
     public function userlist(Request $req){
 
         $list = user::all();
-        echo $list;
+        
+        return view('admin_home.alluserlist',['u_list'=>$list]);
     }
     public function newbook(Request $req){
 

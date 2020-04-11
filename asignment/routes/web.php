@@ -25,6 +25,7 @@ Route::get('/admin_home', 'admin_home@index');
 Route::get('/admin_profile', 'admin_home@profile');
 Route::post('/admin_profileUpdate', 'admin_home@admin_profileUpdate');
 Route::get('/admin_cl', 'admin_home@custlist');
+Route::get('/admin_cl_delete/{id}', 'admin_home@admin_cl_delete');
 Route::get('/admin_ul', 'admin_home@userlist');
 Route::get('/admin_nb', 'admin_home@newbook');
 Route::post('/newbook_2', 'admin_home@newbook_2');
@@ -33,6 +34,8 @@ Route::post('/newbook_2', 'admin_home@newbook_2');
 Route::get('/cust_home', 'cust_home@index');
 Route::get('/cust_profile', 'cust_home@profile');
 Route::post('/cust_profileUpdate', 'cust_home@cust_profileUpdate');
+Route::get('/Searchpage', 'cust_home@Searchpage');
+Route::post('/Search_con', 'cust_home@Search_con');
 
 Route::post('/view', 'cust_home@view');
 Route::post('/orderNow', 'cust_home@orderNow');

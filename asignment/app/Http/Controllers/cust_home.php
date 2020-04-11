@@ -102,6 +102,33 @@ class cust_home extends Controller
     }
     public function cart_order_all(Request $req){
 
+        $user = $req->session()->get('username');
+        $pmtype = $req->session()->get('pmtype');
+
+        $cart = cart::all();
+        
+        foreach($cart as &$c)
+        {
+            $bookorder = new bookorder();
+            $bookorder->username = $user;
+            $bookorder->bookId = $c['bookId'];
+            $bookorder->bookName = $c['bookName'];
+            $bookorder->price = $c['price'];
+            $bookorder->paytype = $pmtype;
+            $bookorder->save();
+        }
+
+        DB::table('carts')->delete();
+        return redirect('/cust_home');
+    }
+    public function Searchpage(Request $req){
+        return view('cust_home.Searchpage');
+    }
+    public function Search_con(Request $req){
+
+        $sc = $req->sc;
+        $b_list = book::where('bookName', 'like', '%'.$sc.'%')->get();
+        return view('cust_home.Search_con',['b_list'=>$b_list]);
     }
 
 }

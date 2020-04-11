@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Customer Page</title>
+	<title>Payment</title>
 	<style>
 		.c1
 		{
@@ -10,23 +10,29 @@
 			margin-top: 10px;
 		}
 	</style>
+
 </head>
 <body>
-	<h1>Welcome Customer!</h1>
-	<br>
-	<a href="/logout">Logout</a> |
-	<a href="/cust_profile">Check Profile</a> |
-	<a href="/cart_payment">Payment</a> |
-	<a href="/Searchpage">Search</a> 
-
-
+	<h1>Searching Page</h1>
+	<a href="/cust_home">Back</a>
 	<br>
 	<br>
-
+	<form action="/Search_con" method="post">
+		{{csrf_field()}}
+		<input type="text" placeholder="Search..." name="sc" class="s1">
+		<br>
+		<input type="submit" value="Go!" class="s1">
+	</form>
+	
+	<br>
+	<br>
+	
 	@foreach($b_list as $book)
 	<div class="c1">
 		Name: {{ $book['bookName'] }} <br>
-		Price: <br>
+		Price: {{ $book['price'] }} <br>
+		Author: {{ $book['authorName'] }} <br>
+		Category: {{ $book['category'] }} <br>
 		<form action="/view" method="post">
 			{{csrf_field()}}
 			<button type="submit" name="viewBtn" value="{{ $book['id'] }}">
@@ -41,6 +47,7 @@
 		</form>
 	</div>
 	@endforeach
+	
 
 </body>
 </html>

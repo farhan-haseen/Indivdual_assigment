@@ -5,7 +5,11 @@
 </head>
 <body>
 	<h1>Profile</h1>
-	
+	<br>
+	<br>
+	<a href="/cust_plist">Purchase List</a>
+	<br>
+	<br>
 	<form action="/cust_profileUpdate" method="post">
 
 		{{csrf_field()}}
